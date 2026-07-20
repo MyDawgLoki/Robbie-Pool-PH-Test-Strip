@@ -187,3 +187,10 @@ footer {
   color: var(--text-muted, #888);
   text-align: center;
 }
+
+.brand-tag {
+  margin-top: 16px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #32cd32;
+}
