@@ -18,12 +18,82 @@ body {
   background: #0d3f5e;
 }
 
-.pool-gif {
+.pool-tiles {
   position: absolute;
-  inset: 0;
-  background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmQwNnI1eWkwNmJ2YmRzbGN4NDdsdzQ4amQ4YWhiOTJ1Mmt6NjNoMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3UiEXtKBO1oJrKKhqP/giphy.gif');
-  background-size: cover;
-  background-position: center;
+  inset: -10%;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      #14587f 0,
+      #14587f 40px,
+      #0f4c70 40px,
+      #0f4c70 80px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.03) 0,
+      rgba(255, 255, 255, 0.03) 40px,
+      transparent 40px,
+      transparent 80px
+    );
+}
+
+.pool-caustics {
+  position: absolute;
+  inset: -20%;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, transparent 60%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 55%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+  background-size:
+    45% 45%,
+    35% 35%,
+    30% 30%;
+  background-repeat: repeat;
+  filter: blur(6px);
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  animation: caustics-drift 18s ease-in-out infinite alternate;
+}
+
+.pool-caustics--alt {
+  background-image: radial-gradient(circle, rgba(180, 230, 255, 0.3) 0%, transparent 55%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+  background-size:
+    50% 50%,
+    38% 38%;
+  opacity: 0.4;
+  animation: caustics-drift-alt 24s ease-in-out infinite alternate;
+}
+
+@keyframes caustics-drift {
+  0% {
+    transform: translate(-3%, -2%) scale(1);
+  }
+  50% {
+    transform: translate(3%, 4%) scale(1.08);
+  }
+  100% {
+    transform: translate(-4%, 3%) scale(1.02);
+  }
+}
+
+@keyframes caustics-drift-alt {
+  0% {
+    transform: translate(2%, -3%) scale(1.05);
+  }
+  50% {
+    transform: translate(-4%, 2%) scale(1);
+  }
+  100% {
+    transform: translate(3%, 4%) scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pool-caustics,
+  .pool-caustics--alt {
+    animation: none;
+  }
 }
 
 header h1 {

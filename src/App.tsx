@@ -10,7 +10,9 @@ function App() {
   return (
     <div className="app">
       <div className="pool-bg" aria-hidden="true">
-        <div className="pool-gif" />
+        <div className="pool-tiles" />
+        <div className="pool-caustics" />
+        <div className="pool-caustics pool-caustics--alt" />
       </div>
 
       <header>
