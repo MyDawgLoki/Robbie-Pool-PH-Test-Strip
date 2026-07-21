@@ -33,6 +33,8 @@ export default function DosingCalculator({ readings }: Props) {
 
   const doses = useMemo(() => calculateDoses(inputs, rates), [inputs, rates]);
 
+  const selectOnFocus = (e: React.FocusEvent<HTMLInputElement>) => e.target.select();
+
   return (
     <div className="dosing-calculator">
       <h2>Pool Details</h2>
@@ -42,6 +44,7 @@ export default function DosingCalculator({ readings }: Props) {
           type="number"
           value={poolGallons}
           min={0}
+          onFocus={selectOnFocus}
           onChange={(e) => setPoolGallons(Number(e.target.value))}
         />
       </label>
@@ -51,13 +54,20 @@ export default function DosingCalculator({ readings }: Props) {
       <div className="reading-grid">
         <label>
           pH
-          <input type="number" step="0.1" value={effectivePh} onChange={(e) => setPh(Number(e.target.value))} />
+          <input
+            type="number"
+            step="0.1"
+            value={effectivePh}
+            onFocus={selectOnFocus}
+            onChange={(e) => setPh(Number(e.target.value))}
+          />
         </label>
         <label>
           Total Alkalinity (ppm)
           <input
             type="number"
             value={effectiveAlk}
+            onFocus={selectOnFocus}
             onChange={(e) => setAlkalinity(Number(e.target.value))}
           />
         </label>
@@ -66,6 +76,7 @@ export default function DosingCalculator({ readings }: Props) {
           <input
             type="number"
             value={effectiveHard}
+            onFocus={selectOnFocus}
             onChange={(e) => setHardness(Number(e.target.value))}
           />
         </label>
@@ -75,13 +86,20 @@ export default function DosingCalculator({ readings }: Props) {
       <div className="reading-grid">
         <label>
           pH
-          <input type="number" step="0.1" value={targetPh} onChange={(e) => setTargetPh(Number(e.target.value))} />
+          <input
+            type="number"
+            step="0.1"
+            value={targetPh}
+            onFocus={selectOnFocus}
+            onChange={(e) => setTargetPh(Number(e.target.value))}
+          />
         </label>
         <label>
           Total Alkalinity (ppm)
           <input
             type="number"
             value={targetAlkalinity}
+            onFocus={selectOnFocus}
             onChange={(e) => setTargetAlkalinity(Number(e.target.value))}
           />
         </label>
@@ -90,6 +108,7 @@ export default function DosingCalculator({ readings }: Props) {
           <input
             type="number"
             value={targetHardness}
+            onFocus={selectOnFocus}
             onChange={(e) => setTargetHardness(Number(e.target.value))}
           />
         </label>
@@ -105,6 +124,7 @@ export default function DosingCalculator({ readings }: Props) {
             <input
               type="number"
               value={rates.phIncreaserOzPer02}
+              onFocus={selectOnFocus}
               onChange={(e) => setRates({ ...rates, phIncreaserOzPer02: Number(e.target.value) })}
             />
           </label>
@@ -113,6 +133,7 @@ export default function DosingCalculator({ readings }: Props) {
             <input
               type="number"
               value={rates.phDecreaserOzPer02}
+              onFocus={selectOnFocus}
               onChange={(e) => setRates({ ...rates, phDecreaserOzPer02: Number(e.target.value) })}
             />
           </label>
@@ -121,6 +142,7 @@ export default function DosingCalculator({ readings }: Props) {
             <input
               type="number"
               value={rates.alkalinityIncreaserLbPer10ppm}
+              onFocus={selectOnFocus}
               onChange={(e) => setRates({ ...rates, alkalinityIncreaserLbPer10ppm: Number(e.target.value) })}
             />
           </label>
@@ -129,6 +151,7 @@ export default function DosingCalculator({ readings }: Props) {
             <input
               type="number"
               value={rates.hardnessIncreaserLbPer10ppm}
+              onFocus={selectOnFocus}
               onChange={(e) => setRates({ ...rates, hardnessIncreaserLbPer10ppm: Number(e.target.value) })}
             />
           </label>
