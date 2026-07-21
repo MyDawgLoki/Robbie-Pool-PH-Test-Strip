@@ -11,7 +11,6 @@ function App() {
     <div className="app">
       <div className="pool-bg" aria-hidden="true">
         <div className="pool-gif" />
-        <div className="pool-vignette" />
       </div>
 
       <header>

@@ -26,12 +26,6 @@ body {
   background-position: center;
 }
 
-.pool-vignette {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, transparent 30%, rgba(3, 20, 32, 0.75) 100%);
-}
-
 header h1 {
   font-size: 1.5rem;
   margin-bottom: 4px;
