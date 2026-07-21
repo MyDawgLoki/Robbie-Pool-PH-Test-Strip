@@ -9,6 +9,13 @@ function App() {
 
   return (
     <div className="app">
+      <div className="pool-bg" aria-hidden="true">
+        <div className="pool-tiles" />
+        <div className="pool-caustics" />
+        <div className="pool-caustics pool-caustics--alt" />
+        <div className="pool-vignette" />
+      </div>
+
       <header>
         <h1>Pool pH & Chemical Dosing Calculator</h1>
         <p className="subtitle">
