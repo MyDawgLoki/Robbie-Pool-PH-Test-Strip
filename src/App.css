@@ -47,13 +47,12 @@ main {
 
 .strip-reader,
 .dosing-calculator {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   padding: 16px;
   color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .strip-reader h2,
