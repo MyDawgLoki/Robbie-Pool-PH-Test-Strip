@@ -31,7 +31,6 @@ function App() {
           Strip color matching uses on-device image sampling against reference swatch colors — no
           photos leave your browser.
         </p>
-        <p className="brand-tag">Robbie's Pool Calculator™</p>
       </footer>
     </div>
   );
